@@ -1,10 +1,7 @@
-name: Hello World CI
-
+name: My CI
 
 on:
   push:
-  #schedule:
-  #  - cron: '0 12,22 * * *'
 
 jobs:
   build:
