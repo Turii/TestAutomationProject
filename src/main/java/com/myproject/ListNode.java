@@ -3,7 +3,6 @@ package com.myproject;
 public class ListNode {
     int val;
     ListNode next;
-
     ListNode() {}
 
     ListNode(int val) {
