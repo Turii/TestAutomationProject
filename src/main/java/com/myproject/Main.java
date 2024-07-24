@@ -6,7 +6,6 @@ public class Main {
         System.out.println(myDog.name);
         myDog.move();
 
-
         ListNode node1 = new ListNode(1);
         ListNode node2 = new ListNode(2);
         ListNode node3 = new ListNode(3, node2);
