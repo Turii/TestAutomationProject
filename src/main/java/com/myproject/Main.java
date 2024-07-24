@@ -5,6 +5,20 @@ public class Main {
         Dog myDog = new Dog("myDog", 3);
         System.out.println(myDog.name);
         myDog.move();
+
+
+        ListNode node1 = new ListNode(1);
+        ListNode node2 = new ListNode(2);
+        ListNode node3 = new ListNode(3, node2);
+
+        node1.next = node3;
+
+        ListNode current = node1;
+        while (current != null) {
+            System.out.println(current.val + " current");
+            current = current.next;
+        }
+
     }
 
 }
