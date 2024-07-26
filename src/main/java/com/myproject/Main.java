@@ -18,6 +18,10 @@ public class Main {
             current = current.next;
         }
 
+        AnimalUtils.makeSoundDos();
+        AnimalUtils.sum(3, 5);
+        AnimalUtils.isPositive(6);
+
     }
 
 }
