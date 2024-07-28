@@ -1,5 +1,7 @@
 package com.myproject;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         Dog myDog = new Dog("myDog", 3);
@@ -17,6 +19,12 @@ public class Main {
             System.out.println(current.val + " current");
             current = current.next;
         }
+
+        AnimalUtils.makeSoundDos();
+        AnimalUtils.sum(3, 5);
+        AnimalUtils.isPositive(6);
+
+        Parrot firstParrot = new Parrot("Parrot1", 2, Arrays.asList("Blue"));
 
     }
 

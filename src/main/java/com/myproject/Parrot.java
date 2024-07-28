@@ -1,14 +1,15 @@
 package com.myproject;
 
+import java.util.List;
+
 public class Parrot extends Bird{
     private String color;
     public Parrot(String name, int age) {
         super(name, age);
     }
 
-    public Parrot(String name, int age, int weight, String color) {
-        super(name, age, weight);
-        this.color = color;
+    public Parrot(String name, int age, List<String> colors) {
+        super(name, age, colors);
     }
 
 
