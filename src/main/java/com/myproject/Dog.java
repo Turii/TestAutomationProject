@@ -9,4 +9,5 @@ public class Dog extends Mammal{
     public void makeSound() {
         System.out.println(name + " says: hav.");
     }
+
 }
