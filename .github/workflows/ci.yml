@@ -27,6 +27,9 @@ jobs:
       - name: Run Unit Test
         run: mvn test
 
+      - name: Display Test Results
+        run: cat target/surefire-reports/*.txt
+
       - name: Attach screenshots and reports
         uses: actions/upload-artifact@v3
         if: failure()
