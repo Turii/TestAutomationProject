@@ -1,5 +1,6 @@
 package com.myproject;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Bird extends AbstractAnimal implements Movable{
@@ -11,8 +12,7 @@ public abstract class Bird extends AbstractAnimal implements Movable{
 
     public Bird(String name, int age, List<String> colors) {
         super(name, age);
-        this.colors  = colors;
-
+        this.colors  = new ArrayList<>(colors);
     }
 
     @Override

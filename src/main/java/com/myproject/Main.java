@@ -2,6 +2,8 @@ package com.myproject;
 
 import java.util.Arrays;
 
+import static com.myproject.AnimalUtils.findDogByName;
+
 public class Main {
     public static void main(String[] args) {
         Dog myDog = new Dog("myDog", 3);
@@ -25,6 +27,23 @@ public class Main {
         AnimalUtils.isPositive(6);
 
         Parrot firstParrot = new Parrot("Parrot1", 2, Arrays.asList("Blue"));
+        Parrot secondParrot = new Parrot("Parrot2", 1, Arrays.asList("red", "white", "blue"));
+        System.out.println(secondParrot.getColor());
+        firstParrot.addColor("black");
+        firstParrot.addColor("green");
+        firstParrot.addColor("white");
+        firstParrot.removeColor("white");
+        System.out.println(firstParrot.getColor());
+        System.out.println(firstParrot.getColors());
+
+        Dog dog1 = new Dog("dog1", 3);
+        Dog dog2 = new Dog("dog2", 3);
+        Dog dog3 = new Dog("dog3", 3);
+        Dog dog4 = new Dog("dog4", 3);
+        Dog[] arrdogs = new Dog[]{dog1, dog2, dog3, dog4};
+        int a = findDogByName("dog2", arrdogs);
+        System.out.println(a);
+
 
     }
 
