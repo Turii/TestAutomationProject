@@ -1,6 +1,8 @@
 package com.myproject;
 
 import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.myproject.AnimalUtils.findDogByName;
 
@@ -43,6 +45,25 @@ public class Main {
         Dog[] arrdogs = new Dog[]{dog1, dog2, dog3, dog4};
         int a = findDogByName("dog2", arrdogs);
         System.out.println(a);
+
+        List<String> catNames = new ArrayList<>();
+        catNames.add("Kitty");
+        catNames.add("Mittens");
+        catNames.add("Cutty");
+
+        List<Cat> myCatsList = new ArrayList<>();
+
+        for (String name : catNames) {
+            Cat cat = new Cat(name, 3);
+            myCatsList.add(cat);
+        }
+
+        for (Cat cat : myCatsList) {
+            System.out.println(cat.getName() + " (age: " + cat.getAge() + ")");
+            cat.makeSound();
+            cat.eat();
+            cat.sleep();
+        }
 
 
     }
