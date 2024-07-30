@@ -28,4 +28,14 @@ public class AnimalUtils {
         return num > 0;
     }
 
+    public static int findDogByName(String name, Dog[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            if (name.equals(arr[i].getName())) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
 }

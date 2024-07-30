@@ -10,4 +10,13 @@ public class Dog extends Mammal{
         System.out.println(name + " says: hav.");
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName() {
+        this.name = name;
+    }
+
+
 }
