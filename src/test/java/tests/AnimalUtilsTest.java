@@ -53,4 +53,45 @@ public class AnimalUtilsTest {
 
 
 
+    @Test
+    public void testBinarySearchElementPresent() {
+        int[] array = {2, 3, 4, 10, 40};
+        int target = 10;
+        int expectedIndex = 3;
+        int result = AnimalUtils.binarySearch(array, target);
+        assertEquals(expectedIndex, result);
+    }
+    @Test
+    public void testBinarySearchElementNotPresent() {
+        int[] array = {2, 3, 4, 10, 40};
+        int target = 5;
+        int expectedIndex = -1;
+        int result = AnimalUtils.binarySearch(array, target);
+        assertEquals(expectedIndex, result);
+    }
+    @Test
+    public void testBinarySearchEmptyArray() {
+        int[] array = {};
+        int target = 1;
+        int expectedIndex = -1;
+        int result = AnimalUtils.binarySearch(array, target);
+        assertEquals(expectedIndex, result);
+    }
+    @Test
+    public void testBinarySearchFirstElement() {
+        int[] array = {2, 3, 4, 10, 40};
+        int target = 2;
+        int expectedIndex = 0;
+        int result = AnimalUtils.binarySearch(array, target);
+        assertEquals(expectedIndex, result);
+    }
+    @Test
+    public void testBinarySearchLastElement() {
+        int[] array = {2, 3, 4, 10, 40};
+        int target = 40;
+        int expectedIndex = 4;
+        int result = AnimalUtils.binarySearch(array, target);
+        assertEquals(expectedIndex, result);
+    }
+
 }
