@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.myproject.AnimalUtils.binarySearch;
 import static com.myproject.AnimalUtils.findDogByName;
 
 public class Main {
@@ -66,6 +67,51 @@ public class Main {
         }
 
 
+        int[] array = {2, 5, 6, 77, 20, 3, 11};
+        int target = 20;
+        int result = binarySearch(array, target);
+        if (result == -1) {
+            System.out.println("not present");
+        } else {
+            System.out.println("present");
+        }
+
+
+
+
+
+    List<String> catNames2 = new ArrayList<>();
+        catNames2.add("Kitty");
+        catNames2.add("Mittens");
+        catNames2.add("Cutty");
+    List<Integer> catAges = new ArrayList<>();
+       catAges.add(2);
+       catAges.add(4);
+       catAges.add(3);
+    List<Cat> myCatsListwithAge = new ArrayList<>();
+
+       for (int i = 0; i < catNames2.size(); i++) {
+        Cat cat = new Cat(catNames2.get(i), catAges.get(i));
+        myCatsListwithAge.add(cat);
     }
+
+       for (Cat cat : myCatsListwithAge) {
+        System.out.println(cat.getName() + " (age: " + cat.getAge() + ")");
+        cat.makeSound();
+        cat.eat();
+        cat.sleep();
+    }
+
+    Integer[] ageArray = catAges.toArray(new Integer[0]);
+       Arrays.sort(ageArray);
+
+    int targetAge = 3;
+    int resultCatAge = Arrays.binarySearch(ageArray, targetAge);
+       if (resultCatAge < 0) {
+        System.out.println("Age " + targetAge + " not present in the list");
+    } else {
+        System.out.println("Age " + targetAge + " is present in the list");
+    }
+}
 
 }
