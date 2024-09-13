@@ -26,3 +26,4 @@ release.properties
 *.iws
 *.iml
 *.ipr
+/local.properties

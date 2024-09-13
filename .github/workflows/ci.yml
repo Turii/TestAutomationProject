@@ -22,9 +22,14 @@ jobs:
         run: sudo apt-get install google-chrome-stable
 
       - name: Build with Maven
+        env:
+          S_USERNAME: ${{secrets.S_USERNAME}}
+          S_PASSWORD: ${{secrets.S_PASSWORD}}
+          BASE_URL: ${{secrets.BASE_URL}}
+          CI_RUN: true
         run: mvn -B package --file pom.xml
 
-      - name: Run Unit Test
+      - name: Run all Tests (TestNG and JUnit)
         run: mvn test
 
       - name: Display Test Results

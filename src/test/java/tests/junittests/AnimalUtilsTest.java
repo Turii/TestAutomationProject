@@ -1,4 +1,4 @@
-package tests;
+package tests.junittests;
 
 import com.myproject.AnimalUtils;
 import com.myproject.Dog;
