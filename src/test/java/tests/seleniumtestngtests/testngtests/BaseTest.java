@@ -51,7 +51,10 @@ public abstract class BaseTest {
         }
         // Get the URL from the system properties
         String baseUrl = System.getProperty("BASE_URL");
+        //String baseUrl = System.getProperty(getBaseUrl());
+        //String baseUrl = getBaseUrl();
         driver.get(baseUrl);  // Navigate to the base URL
+
         // Perform login with credentials
         String username = System.getProperty("S_USERNAME");
         String password = System.getProperty("S_PASSWORD");
@@ -59,6 +62,10 @@ public abstract class BaseTest {
         driver.findElement(By.id("password")).sendKeys(password);
         driver.findElement(By.id("login-button")).click();
     }
+
+    //protected String getBaseUrl() {
+    //    return System.getProperty("BASE_URL");
+    //}
     @AfterMethod
     public void tearDown() {
         if (driver != null) {
