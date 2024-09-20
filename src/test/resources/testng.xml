@@ -3,6 +3,7 @@
     <test name="TestNG Tests">
         <classes>
             <class name="tests.seleniumtestngtests.testngtests.HomePageTest"/>
+            <class name="tests.seleniumtestngtests.testngtests.SeleniumPracticeTest"/>
             <!-- Add more TestNG classes here -->
         </classes>
     </test>

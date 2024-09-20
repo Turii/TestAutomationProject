@@ -47,4 +47,6 @@ public class HomePageTest extends BaseTest {
             Assert.assertTrue(priceWithoutDollar.matches("\\d+\\.\\d{2}"), "Price format is incorrect: " + priceWithoutDollar);
         }
     }
+
+    //webelements, webdriver
 }
