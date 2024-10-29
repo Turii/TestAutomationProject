@@ -59,7 +59,7 @@
         <dependency>
             <groupId>com.qmetry</groupId>
             <artifactId>qaf</artifactId>
-            <version>2.1.14</version> <!-- Update to the version you need -->
+            <version>2.1.14</version> <!-- Update  -->
         </dependency>
         <dependency>
             <groupId>com.qmetry</groupId>
