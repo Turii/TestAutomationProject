@@ -31,9 +31,17 @@ jobs:
           
           echo "ANDROID_HOME=$HOME/Library/Android/sdk" >> $GITHUB_ENV
           echo "PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:\$PATH" >> $GITHUB_ENV
-                   
-          sdkmanager "platform-tools" "platforms;android-30" "emulator" "system-images;android-30;google_apis;x86_64"           
-          yes | sdkmanager --licenses
+          
+          $HOME/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;android-30" "emulator" "system-images;android-30;google_apis;x86_64"
+          yes | $HOME/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager --licenses
+
+      - name: List files in Android SDK
+        run: |
+          ls -R $HOME/Library/Android/sdk/cmdline-tools/latest/bin
+
+      - name: Test sdkmanager command
+        run: |
+          $HOME/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager --list
 
       - name: Start Android Emulator
         env:
@@ -41,6 +49,7 @@ jobs:
         run: |
           echo "no" | avdmanager create avd -n test -k "system-images;android-30;google_apis;x86_64" --force
           $ANDROID_HOME/emulator/emulator -avd test -no-snapshot-save -no-window -noaudio -gpu swiftshader_indirect &
+
       - name: Wait for Android Emulator to boot
         run: |
           adb wait-for-device
