@@ -9,6 +9,8 @@ import static com.myproject.AnimalUtils.findDogByName;
 
 public class Main {
     public static void main(String[] args) {
+
+        Parrot.countCharacters();
         Dog myDog = new Dog("myDog", 3);
         System.out.println(myDog.name);
         myDog.move();

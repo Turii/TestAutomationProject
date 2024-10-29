@@ -19,6 +19,27 @@ public class Parrot extends Bird{
     }
 
 
+    public static void countCharacters() {
+        String input = "aabbccddd";
+        int count = 1;
+        StringBuilder compressed = new StringBuilder();
+
+        for(int i = 1; i < input.length(); i++) {
+            if (input.charAt(i) == input.charAt(i -1)) {
+                count++;
+            } else {
+                compressed.append(input.charAt(i-1)).append(count);
+                count = 1;
+            }
+        }
+        compressed.append(input.charAt(input.length()-1)).append(count);
+        System.out.println(compressed.toString());
+    }
+
+    public static void countCharWithMap() {
+        String input = "aabbccddd";
+
+    }
     /*public String getColor() {
         return color;
     }
