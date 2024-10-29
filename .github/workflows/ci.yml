@@ -18,6 +18,34 @@ jobs:
           distribution: 'adopt'
           cache: maven
 
+      - name: Install dependencies
+        run: |
+            sudo apt-get update
+            sudo apt-get install -y openjdk-11-jdk wget unzip curl
+            sudo apt-get install -y android-sdk
+      - name: Install Android SDK components
+        run: |
+          sdkmanager "platform-tools" "platforms;android-30" "emulator" "system-images;android-30;google_apis;x86_64"
+      - name: Accept licenses
+        run: yes | sdkmanager --licenses
+
+      - name: Start Android Emulator
+        env:
+          ADB_INSTALL_TIMEOUT: 10
+        run: |
+          echo "no" | avdmanager create avd -n test -k "system-images;android-30;google_apis;x86_64" --force
+          $ANDROID_HOME/emulator/emulator -avd test -no-snapshot-save -no-window -noaudio -gpu swiftshader_indirect &
+      - name: Wait for Android Emulator to boot
+        run: |
+          adb wait-for-device
+          adb shell input keyevent 82
+      - name: Install Appium
+        run: |
+          npm install -g appium
+          appium -v # Check Appium version
+      - name: Start Appium Server
+        run: appium &
+
       - name: Install Chrome
         run: sudo apt-get install google-chrome-stable
 
