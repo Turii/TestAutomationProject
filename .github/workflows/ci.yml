@@ -35,6 +35,12 @@ jobs:
           $HOME/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;android-30" "emulator" "system-images;android-30;google_apis;x86_64"
           yes | $HOME/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager --licenses
 
+      - name: Test basic commands
+        run: |
+          echo "Testing echo command" # Тест echo
+          pwd # Перевірка поточної директорії
+          which ls || echo "ls command not found" # Перевірка доступності ls
+
       - name: List files in Android SDK
         run: |
           ls -R $HOME/Library/Android/sdk/cmdline-tools/latest/bin
