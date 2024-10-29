@@ -27,9 +27,11 @@ jobs:
           wget https://dl.google.com/android/repository/commandlinetools-linux-7583922_latest.zip -O cmdline-tools.zip           
           unzip cmdline-tools.zip -d cmdline-tools           
           mkdir cmdline-tools/latest           
-          mv cmdline-tools/cmdline-tools/* cmdline-tools/latest/           
-          export ANDROID_HOME=$HOME/Library/Android/sdk           
-          export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH           
+          mv cmdline-tools/cmdline-tools/* cmdline-tools/latest/ 
+          
+          echo "ANDROID_HOME=$HOME/Library/Android/sdk" >> $GITHUB_ENV
+          echo "PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:\$PATH" >> $GITHUB_ENV
+                   
           sdkmanager "platform-tools" "platforms;android-30" "emulator" "system-images;android-30;google_apis;x86_64"           
           yes | sdkmanager --licenses
 
